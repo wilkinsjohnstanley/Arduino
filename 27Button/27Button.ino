@@ -1,13 +1,10 @@
 //RGB
-int Blue=A3;
-int Green=A4;
-int Red=A5;
+int LED = A5;
 //state
 int LEDState=0;
 int buttonNew;
 int buttonOld=0;
-//deep state
-int deepState=0;
+
 
 
 
@@ -18,9 +15,8 @@ int buttonPin=A0;
 void setup() {
   // put your setup code here, to run once:
 Serial.begin(9600);
-pinMode(Blue, OUTPUT);
-pinMode(Green, OUTPUT);
-pinMode(Red, OUTPUT);
+pinMode(LED, OUTPUT);
+
 pinMode(buttonPin,INPUT);
 
 }
@@ -43,7 +39,7 @@ if(buttonOld==0 && buttonNew == 1){
   if(LEDState==0){
     //the button is turned on
 
-      digitalWrite(Green, HIGH);
+      digitalWrite(LED, HIGH);
 
     //LED state is set to 1
     LEDState=1; 
@@ -51,7 +47,7 @@ if(buttonOld==0 && buttonNew == 1){
     //IF PRESS AGAIN RETURN TO DEFAULT
     //else statement only happens if you enter the if statement in the first place
   } else {
-    digitalWrite(Green, LOW);
+    digitalWrite(LED, LOW);
     LEDState=0;
 
 
