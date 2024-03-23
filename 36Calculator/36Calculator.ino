@@ -26,7 +26,7 @@ void setup() {
 IR.enableIRIn();
   //our LCD has 16 columns and 2 rows!
 lcd.begin(16, 2);
-//serial input so start the serial monitor
+//Serial monitor is used for debugging. Checking that the variables get assigned as expected and what they were at any given moment
 Serial.begin(9600);
 }
 
